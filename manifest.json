@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "Tomato Ding!",
+  "version": "1.0",
+  "description": "A Pomodoro timer that controls YouTube video playback",
+  "icons": {
+    "16": "images/icon16.png",
+    "32": "images/icon32.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "permissions": [
+    "storage",
+    "tabs",
+    "offscreen"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "css": ["overlay.css"],
+      "js": ["content.js"]
+    }
+  ],
+  "web_accessible_resources": [{
+    "resources": ["ding.mp3"],
+    "matches": ["<all_urls>"]
+  }]
+}

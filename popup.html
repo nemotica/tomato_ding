@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <div class="timer-display">
+            <span id="timer">25:00</span>
+        </div>
+        
+        <div class="input-group">
+            <div class="input-field">
+                <label for="workDuration">工作时长 (分钟):</label>
+                <input type="number" id="workDuration" value="25" min="1" max="60">
+            </div>
+            <div class="input-field">
+                <label for="breakDuration">休息时长 (分钟):</label>
+                <input type="number" id="breakDuration" value="5" min="1" max="60">
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button id="startBtn">开始</button>
+            <button id="pauseBtn">暂停</button>
+            <button id="resetBtn">重置</button>
+        </div>
+    </div>
+    
+    <!-- 添加音频元素 -->
+    <audio id="notificationSound" src="ding.mp3"></audio>
+    
+    <script src="popup.js"></script>
+</body>
+</html>
